@@ -1,0 +1,184 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    background-color:#333;
+    padding: 20px;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: bisque
+}
+
+.header {
+    display: flex;
+    align-items: center;
+}
+.header_img{
+    margin: 0;
+    width: 100px;
+}
+.header_text{
+    margin-left: auto;  
+}
+.no-link-style{
+    color: inherit; 
+    text-decoration: none; 
+    cursor: pointer;
+}
+
+nav{
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.nav_box{
+    background-color: #333;
+    color: antiquewhite;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.nav_text{
+    padding-left: 20px;
+    padding-right: 20px;
+    
+
+    color: antiquewhite;
+    text-decoration: none;
+}
+.nav_text:hover{
+    opacity: 0.3;
+}
+
+.about-us{
+    display: flex;
+    text-align: center;
+    background-color: #ddd;
+    padding: 20px;
+    margin: 20px;
+    flex-direction: column;
+}
+
+.about-us_title{
+    order: 1;
+    margin-bottom: 10px;
+}
+.about-us_text{
+    order: 2; 
+}
+
+.shop-now{
+    display: flex;
+    align-items: center;
+    width: 80px;
+    height: 20px;
+    padding: 10px;
+    margin: 20px;
+    border-radius: 8px;
+    
+    background-color:#4CAF50;
+    text-decoration: none;
+    font-size: small;
+    text-align: center;
+    
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    transition: background-color 0.3s;
+}
+.shop-now:hover{
+    background-color: #3c8b3f;
+}
+
+.customer-reviews{
+    background-color: #ddd;
+    margin: 20px;
+    padding: 20px;
+}
+
+.product-title{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: #6b6464;
+    margin-left: 20px;
+}
+
+.ALL-products-container{
+    background-color: #ddd;
+    height: 90%;
+    width: 90%;
+    display: table;
+    margin: 30px auto;
+    padding: 10px;
+}
+
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.product-container{
+    display: block;
+    background-color: #f9f9f9;
+    height: 100%;
+    width: 40%;
+    padding: 20px;
+    text-align: center;
+    margin: 10px;
+    /*transition: background-color 0.3s; makes change too subtle, imo hover color change should be slightly more noticeable so transition can be effective*/ 
+    }
+
+.product-container:hover{
+    background-color: #ffffff;
+}
+
+.product-container img{
+    max-width: 100%;
+    margin-bottom: 10px;
+    border-radius: 8px;
+}
+
+.product-container h2{
+    margin: 0;
+}
+
+.product-container p{
+    color: #007BFF;
+    font-weight: bold;
+}
+
+.product-container button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.product-container button:hover {
+    background-color: #45A049;
+}
+
+@media screen and (max-width: 480px) {
+    .product-container{
+        width: 100%;
+        display: table-row;
+    }   
+}
+
+footer{
+    background-color: #333;
+    padding: 10px;
+    margin: 0px;
+    color: white;
+    text-align: center;
+}
+
+
+

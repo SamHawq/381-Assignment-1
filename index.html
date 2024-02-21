@@ -11,62 +11,23 @@ Description  : Homepage
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="styles.css">
     <style>
-        body{
-            background-color: bisque;
-            
-        }
-
-        header{
-            background-color: antiquewhite;
-            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-            text-align: center;
-        }
-        .header_img{display: inline-block;}
-        .header_text{display: inline-block;}
-
-        nav{
-            text-align: center;
-            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-            background-color:rgba(73, 21, 4, 0.716);
-        }
-        .nav_box{color: antiquewhite;}
-        .nav_text{
-            color: antiquewhite;
-            text-decoration: none;
-        }
-        .nav_text:hover{
-            opacity: 0.3;
-        }
-        
-        .shop-now{
-            width: 90px;
-            height: 30px;
-            background-color:rgba(73, 21, 4, 0.716);
-            text-decoration: none;
-            font-size: medium;
-            text-align: center;
-        }
-        .shop-now :hover{
-            opacity: 0.6;
-        }
-
     </style>
-    <link rel=”stylesheet” href=”styles.css”>
 </head>
 <body>
     <header>
         <div class="header">
-            <a href="index.html"><img class="header_img" width="300px" src="https://www.theperfectloaf.com/wp-content/uploads/2019/03/hoeweler_theperfectloaf_paindemie_final_600-1920x1303.png"></a>
-            <h1 class="header_text">The Bread</h1>
+            <a href="index.html"><img class="header_img" src="https://www.theperfectloaf.com/wp-content/uploads/2019/03/hoeweler_theperfectloaf_paindemie_final_600-1920x1303.png"></a>
+            <a href="index.html" class="no-link-style"><h1 class="header_text">The Bread</h1></a>
         </div> 
     </header>
 
     <div class="nav_box">
         <nav>
-            <a class="nav_text" href="index.html">Home</a> |
-            <a class="nav_text" href="products.html">Products</a> |
-            <a class="nav_text" href="contact.html">Contact</a> |
+            <a class="nav_text" href="index.html">Home</a> 
+            <a class="nav_text" href="products.html">Products</a> 
+            <a class="nav_text" href="contact.html">Contact</a> 
             <a class="nav_text" href="login.html">Login</a>
         </nav>
     </div>
@@ -74,24 +35,25 @@ Description  : Homepage
     <main>
         <!-- About Us Section -->
         <section class="about-us">
-            <h3>About us:</h3>
-            <p>Our goal is to make a lot of money.</p>    
+            <h3 class="about-us_title">About us:</h3>
+            <p class="about-us_text">Our goal is to make a lot of money.</p>    
         </section>
-        <section class="shop-now"><a href="products.html">
-            <h3 style="text-decoration: none;">Shop Now!</h3>
-        </a></section>
+        <a href="products.html" class="no-link-style"><section class="shop-now">
+            <h3>Shop Now!</h3>
+        </section></a>
             <!-- Customer Reviews/Testimonials Section -->
-            <h3><u>Customer Reviews</u></h3>
+            
         <section class="customer-reviews">
-            <p><b>John Doe - 2024-01-28</b></p>
-            <p>The Bread is great!</p>
+            <h3>Customer Reviews</h3>
+            <p><u>John Doe - 2024-01-28</u></p>
+            <p>&#9733&#9733&#9733&#9733&#9733 The Bread is great!</p>
 
-            <p><b>Sally Field - 2024-01-28</b></p>
-            <p>The Bread has great service, 5 stars!</p>
+            <p><u>Sally Field - 2024-01-28</u></p>
+            <p>&#9733&#9733&#9733&#9733&#9733 The Bread has great service, 5 stars!</p>
         </section>
     </main>
     <footer>
-        <p style="color:gray; font-size:10px;">&copy;Copyright: Samiul Haque and Manbir Briar</p>
+        <p class="footer-sect">&copy;Copyright: Samiul Haque and Manbir Briar</p>
     </footer>
 </body>
 </html>
