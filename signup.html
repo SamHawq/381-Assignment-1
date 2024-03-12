@@ -101,21 +101,21 @@
             }
 
             function signInMessage(message){
-                var existingMessageBox = document.getElementById('signmessage-box');
+                var existingMessageBox = document.getElementById('sign-message-box');
                 
                 if (existingMessageBox) {
                     existingMessageBox.innerHTML = ''; 
                     existingMessageBox.textContent = message;
                 } else {
                     var newMessageBox = document.createElement('div');
-                    newMessageBox.id = 'signmessage-box';
+                    newMessageBox.id = 'sign-message-box';
                     newMessageBox.textContent = message;
                     document.querySelector('main').appendChild(newMessageBox);
                 }
             }
 
             if(isValid){
-                signInMessage('Login successful!');
+                signInMessage('Signup successful!');
             } else {
                 signInMessage(errorMessages.join("\n"));
             }
