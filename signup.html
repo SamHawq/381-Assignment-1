@@ -47,8 +47,8 @@
             </form>
         </section>
 
-        <div class="message-box" id="messageBox">
-            <p id="messageText"></p>
+        <div class="signmessage-box" id="signmessageBox">
+            <p id="signmessageText"></p>
         </div>
 
     </main>
@@ -66,8 +66,8 @@
             var password = document.getElementById("password").value;
             var confirmPassword = document.getElementById("confirm-password").value;
             var email = document.getElementById("email").value;
-            var messageBox = document.getElementById("messageBox");
-            var messageText = document.getElementById("messageText");
+            var messageBox = document.getElementById("signmessageBox");
+            var messageText = document.getElementById("signmessageText");
             
             var isValid = true;
             var errorMessages = []; // Array to store error messages
@@ -94,7 +94,7 @@
             // Email validation 
             // could use below to check for just a charcter after '.' instead of specific domains
             //var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            var emailPattern = /^[^\s@]+@[^\s@]+\.(?:com|net|io)$/i;
+            var emailPattern = /^[^\s@]+@[^\s@]+\.(?:com|net|org|io)$/i;
             if (!emailPattern.test(email)) {
                 isValid = false;
                 errorMessages.push("Check the email.");
