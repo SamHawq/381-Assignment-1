@@ -100,15 +100,26 @@
                 var existingMessageBox = document.getElementById('sign-message-box');
                 
                 if (existingMessageBox) {
-                    existingMessageBox.innerHTML = ''; 
-                    existingMessageBox.textContent = message;
+                    existingMessageBox.innerHTML = ''; // Clear existing message
+                    // Split the message by newlines and create a <div> for each line
+                    message.split("\n").forEach(function(msg) {
+                        var div = document.createElement('div');
+                        div.textContent = msg;
+                        existingMessageBox.appendChild(div);
+                    });
                 } else {
                     var newMessageBox = document.createElement('div');
                     newMessageBox.id = 'sign-message-box';
-                    newMessageBox.textContent = message;
+                    // Split the message by newlines and create a <div> for each line
+                    message.split("\n").forEach(function(msg) {
+                        var div = document.createElement('div');
+                        div.textContent = msg;
+                        newMessageBox.appendChild(div);
+                    });
                     document.querySelector('main').appendChild(newMessageBox);
                 }
             }
+
 
             if(isValid){
                 signInMessage('Signup successful!');
