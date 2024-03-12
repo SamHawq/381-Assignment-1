@@ -341,10 +341,9 @@ footer{
 }
 
 #message-box {
-    border: 2px;
+    border: 2px solid black;
     background-color: #f9f9f9;
     padding: 10px;
     margin: 20px;
-    display: none;
 }
 
