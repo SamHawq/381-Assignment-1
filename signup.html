@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us</title>
+    <title>Login Page</title>
+    <link rel="stylesheet" href="styles.css">
     <style>
     </style>
-    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
@@ -25,14 +25,94 @@
             <a class="nav_text" href="login.html">Login</a>
         </nav>
     </div>
+    <br>
 
     <main>
+        <section class="signup-form">
+            <form onsubmit="return validateForm(event)">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required placeholder="Enter your username">
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required placeholder="Enter your password">
+
+                <label for="confirm-password">Confirm Password:</label>
+                <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm password" required>
+                
+                <!-- with input type email it doesnt not allow for bad email submission-->
+                <label for="email">Email:</label>
+                <input type="text" id="email" name="email" placeholder="Enter email" required>
+
+                <button type="submit" class="signup-btn">Signup</button>
+            </form>
+        </section>
+
+        <div class="message-box" id="messageBox">
+            <p id="messageText"></p>
+        </div>
 
     </main>
-
+    
     <footer>
         <p class="footer-sect">&copy;Copyright: Samiul Haque and Manbir Briar</p>
     </footer>
+
+    <script>
+        // JavaScript for form validation and message display
+        function validateForm(event) {
+            event.preventDefault(); // Prevent default form submission behavior
+
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            var confirmPassword = document.getElementById("confirm-password").value;
+            var email = document.getElementById("email").value;
+            var messageBox = document.getElementById("messageBox");
+            var messageText = document.getElementById("messageText");
+            
+            var isValid = true;
+            var errorMessages = []; // Array to store error messages
+
+            var usernamePattern = /^[a-zA-Z][a-zA-Z0-9_-]{2,19}$/;
+            if (!usernamePattern.test(username)) {
+                isValid = false;
+                errorMessages.push("Check the username.");
+            }
+
+            // Password validation
+            var passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()-_=+[{\]}|;:'",.<>?/`~]).{8,}$/;
+            if (!passwordPattern.test(password)) {
+                isValid = false;
+                errorMessages.push("Check the password.");
+            }
+
+            // Confirm password validation
+            if (password !== confirmPassword) {
+                isValid = false;
+                errorMessages.push("Password doesn't match.");
+            }
+
+            // Email validation 
+            // could use below to check for just a charcter after '.' instead of specific domains
+            //var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            var emailPattern = /^[^\s@]+@[^\s@]+\.(?:com|net|io)$/i;
+            if (!emailPattern.test(email)) {
+                isValid = false;
+                errorMessages.push("Check the email.");
+            }
+
+            // Message box text
+            if (isValid) {
+                messageText.innerText = "Signup successful!";
+            } else {
+                messageText.innerText = errorMessages.join("\n");
+            }
+
+            messageBox.style.display = "block";
+
+            return isValid;
+        }
+
+    </script>
 
 </body>
 </html>
