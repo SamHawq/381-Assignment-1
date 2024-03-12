@@ -100,16 +100,25 @@
                 errorMessages.push("Check the email.");
             }
 
-            // Message box text
-            if (isValid) {
-                messageText.innerText = "Signup successful!";
-            } else {
-                messageText.innerText = errorMessages.join("\n");
+            function signInMessage(message){
+                var existingMessageBox = document.getElementById('signmessage-box');
+                
+                if (existingMessageBox) {
+                    existingMessageBox.innerHTML = ''; 
+                    existingMessageBox.textContent = message;
+                } else {
+                    var newMessageBox = document.createElement('div');
+                    newMessageBox.id = 'signmessage-box';
+                    newMessageBox.textContent = message;
+                    document.querySelector('main').appendChild(newMessageBox);
+                }
             }
 
-            messageBox.style.display = "block";
-
-            return isValid;
+            if(isValid){
+                signInMessage('Login successful!');
+            } else {
+                signInMessage(errorMessages.join("\n"));
+            }
         }
 
     </script>
